@@ -1,0 +1,17 @@
+<div class="main">
+  <h1>Mi lista</h1>
+  <label for="addItemInput">¿Que quieres hacer hoy?</label>
+  <p></p>
+  <input
+    #newItem
+    placeholder="Inserte un item"
+    (keyup.enter)="addItem(newItem.value); newItem.value = ''"
+    class="lg-text-input"
+    id="addItemInput" />
+  
+  <button class="btn-primary" (click)="addItem(newItem.value)">Añadir</button>
+
+  <ul>
+    <li *ngFor="let item of items">{{item.description}}</li>
+  </ul>
+</div>
